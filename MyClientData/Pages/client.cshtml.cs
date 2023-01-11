@@ -9,7 +9,7 @@ namespace MyClientData.Pages.Clients
         public List<ClientsInfo> ClientData = new List<ClientsInfo>();
         public void OnGet()
         {
-            string myDbConnection = "SERVER=localhost;DATABASE=mydb;UID=root;PASSWORD=";
+            string myDbConnection = "SERVER=localhost;DATABASE=davdb;UID=root;";
             MySqlConnection clientdata = new MySqlConnection(myDbConnection);
 
             clientdata.Open();
@@ -21,9 +21,6 @@ namespace MyClientData.Pages.Clients
             {
 
                 ClientsInfo client = new ClientsInfo();
-
-                string stringInBase64 = userreader.GetString(6);
-                byte[] photo = System.Convert.FromBase64String(stringInBase64);
 
               
                 client.id = ""+ userreader.GetInt32(0);

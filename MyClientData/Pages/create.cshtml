@@ -9,38 +9,45 @@
 @if (Model.errorMessage.Length > 0){
 	<div class="alert alert-marning alert-dismissible fade show" role="alert">
       <strong>@Model.errorMessage</strong>
+	  <button type="button" class="btn-close" data-dismiss="alert" area-lable="close"></button>
 	</div>
 }
 
 <form method="post">
 	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Nmae</label>
+		<label class="col-sm-3 col-form-label">Name</label>
         <div class="col-sm-6">
-			<input type="text" class="form-control" name="name" value="" />
+			<input type="text" class="form-control" name="name" value="@Model.name" />
 		</div>
 
 	</div>
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Email</label>
 		<div class="col-sm-6">
-			<input type="email" class="form-control" name="email" value="" />
+			<input type="email" class="form-control" name="email" value="@Model.email" />
 		</div>
 
 	</div>
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Phone</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="phone" value="" />
+			<input type="text" class="form-control" name="phone" value="@Model.phone" />
 		</div>
 
 	</div>
 	<div class="row mb-3">
 		<label class="col-sm-3 col-form-label">Address</label>
 		<div class="col-sm-6">
-			<input type="text" class="form-control" name="address" value="" />
+			<input type="text" class="form-control" name="address" value="@Model.address" />
 		</div>
 
 	</div>
+	@if (Model.successMessage.Length > 0){
+	<div class="alert alert-marning alert-dismissible fade show" role="alert">
+			<strong>@Model.successMessage</strong>
+	  <button type="button" class="btn-close" data-dismiss="alert" area-lable="close"></button>
+	</div>
+}
 	<div class="row mb-3">
 		
         <div class="offset-sm-3 col-sm-3 d-grid">
