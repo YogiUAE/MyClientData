@@ -1,0 +1,60 @@
+﻿@page
+@model MyClientData.Pages.EditModel
+@{
+}
+
+
+
+<br />
+<h2>Edit Client</h2>
+@if (Model.errorMessage.Length > 0)
+{
+	<div class="alert alert-marning alert-dismissible fade show" role="alert">
+		<strong>@Model.errorMessage</strong>
+		<button type="button" class="btn-close" data-dismiss="alert" area-lable="close"></button>
+	</div>
+}
+
+<form method="post" >
+
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Name</label>
+		<div class="col-sm-6">
+			<input type="hidden" class="form-control" name="id" value="@Model.clientss.id" />
+			<input type="text" class="form-control" name="name" value="@Model.clientss.name" />
+		</div>
+
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Email</label>
+		<div class="col-sm-6">
+			<input type="email" class="form-control" name="email" value="@Model.clientss.email" />
+		</div>
+
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Phone</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="phone" value="@Model.clientss.phone" />
+		</div>
+
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Address</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="address" value="@Model.clientss.address" />
+		</div>
+
+	</div>
+
+	<div class="row mb-3">
+
+		<div class="offset-sm-3 col-sm-3 d-grid">
+			<button type="submit" class="btn btn-primary"  >Submit</button>
+		</div>
+		<div class=" col-sm-3 d-grid">
+			<a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+		</div>
+
+	</div>
+</form>

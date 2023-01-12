@@ -23,7 +23,7 @@ namespace MyClientData.Pages.Clients
                 ClientsInfo client = new ClientsInfo();
 
               
-                client.id = ""+ userreader.GetInt32(0);
+                client.id = userreader.GetInt32(0);
                 client.name = userreader.GetString(1);
                 
                 client.email = userreader.GetString(2);
@@ -42,7 +42,7 @@ namespace MyClientData.Pages.Clients
 
     public class ClientsInfo
     {
-        public string id ;
+        public int id ;
         public string name ;
         public string email ;
         public string phone ;

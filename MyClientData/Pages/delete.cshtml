@@ -1,0 +1,19 @@
+﻿@page
+@using MySql.Data.MySqlClient;
+
+@{
+    string id = Request.Query["id"];
+    string myDbConnection = "SERVER=localhost;DATABASE=davdb;UID=root;PASSWORD=";
+    MySqlConnection delete = new MySqlConnection(myDbConnection);
+
+    delete.Open();
+
+    string dlt = "DELETE FROM persons where id='" + id + "'";
+    MySqlCommand deletecmd = new MySqlCommand(dlt, delete);
+    MySqlDataReader dltreader = deletecmd.ExecuteReader();
+
+    Response.Redirect("/client");
+
+    delete.Close();
+
+}
